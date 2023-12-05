@@ -5,9 +5,9 @@
 
         <!-- logo -->
 
-        <h1> <a th:href="@{/}" title="avana LLC"><img
+        <h1> <a th:href="@{/}" title="duster site"><img
                     th:src="@{https://www.z4a.net/images/2023/12/05/-2.png}"
-                    style="width: 66px;" title="avana LLC" alt="avana LLC" /></a> </h1>
+                    style="width: 66px;" title="duster site" alt="duster site" /></a> </h1>
 
         <!-- logo -->
 
@@ -16,8 +16,8 @@
         <nav role="header-nav" class="navy">
             <ul>
                 <li th:class="${active == 'life' ? 'nav-active':''}"><a th:href="@{/}" title="Life">Life</a></li>
-                <!-- <li th:class="${active == 'about' ? 'nav-active':''}"><a  th:href="@{/about}" title="About">About</a></li>
-                <li th:class="${active == 'blog' ? 'nav-active':''}"><a th:href="@{/blog/index}" title="Blog">Blog</a></li> -->
+                <li th:class="${active == 'blog' ? 'nav-active':''}"><a th:href="@{/blog/index}" title="Blog">Blog</a></li>
+                <li th:class="${active == 'about' ? 'nav-active':''}"><a  th:href="@{/about}" title="About">About</a></li>
             </ul>
         </nav>
 

@@ -1,5 +1,6 @@
 package cn.luischen;
 
+import cn.luischen.utils.TaleUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +12,11 @@ public class MySiteApplicationTests {
 
 	@Test
 	public void contextLoads() {
+	}
+
+	@Test
+	public void md5Test() {
+		System.out.println(TaleUtils.MD5encode("duster" + "mimashi99+Blog"));
 	}
 
 }

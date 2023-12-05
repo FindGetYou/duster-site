@@ -1,5 +1,5 @@
 server:
-  port: 443
+  port: 8080
   ssl:
     key-store: classpath:luischen.cn.pfx
     key-store-password: l29df164yf5d4z
@@ -66,7 +66,7 @@ pagehelper:
     returnPageInfo: check
 
 swagger:
-  show: false
+  show: true
 
 
 

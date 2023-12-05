@@ -14,8 +14,8 @@
     <nav role="footer-nav">
         <ul>
             <li><a th:href="@{/}" title="Life">Life</a></li>
-            <!-- <li><a th:href="@{/about}" title="About">About</a></li>
-            <li><a th:href="@{/blog/index}" title="Blog">Blog</a></li> -->
+            <li><a th:href="@{/blog/index}" title="Blog">Blog</a></li>
+            <li><a th:href="@{/about}" title="About">About</a></li>
         </ul>
     </nav>
 
@@ -50,7 +50,7 @@
             </th:block>
         </th:block>
     </ul>
-    <p class="copy-right">&copy; 2018 <th:block th:text="${title}"></th:block>
+    <p class="copy-right">&copy; 2023 <th:block th:text="${title}"></th:block>
     </p>
     <th:block th:if="${record != null and record != ''}"><a class="copy-right" th:href="@{http://www.miitbeian.gov.cn/}"
             th:text="${record}"></a></th:block>
