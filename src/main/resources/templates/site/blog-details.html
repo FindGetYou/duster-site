@@ -1,69 +1,64 @@
 <!DOCTYPE HTML>
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div th:replace="site/head::head(${article.title},${commons.google_site_verification()}, ${commons.baidu_site_verification()})"></div>
-
+<div
+    th:replace="site/head::head(${article.title},${commons.google_site_verification()}, ${commons.baidu_site_verification()})">
+</div>
 
 <body>
 
+    <!-- header -->
 
-<!-- header -->
+    <div th:replace="site/header::header"></div>
 
-<div th:replace="site/header::header"></div>
+    <!-- header -->
 
-<!-- header -->
+    <!-- main -->
 
-<!-- main -->
+    <main role="main-inner-wrapper" class="container">
 
-<main role="main-inner-wrapper" class="container">
+        <div class="blog-details">
 
+            <article class="post-details" id="post-details">
 
-    <div class="blog-details">
+                <header role="bog-header" class="bog-header text-center">
 
-        <article class="post-details" id="post-details">
+                    <h3>
+                        <th:block th:utext="${commons.fmtdate_en(article.created)}"></th:block>
+                    </h3>
 
-            <header role="bog-header" class="bog-header text-center">
+                    <h2>
+                        <th:block th:text="${article.title}"></th:block>
+                    </h2>
 
-                <h3>
-                    <th:block th:utext="${commons.fmtdate_en(article.created)}"></th:block>
-                </h3>
+                </header>
 
-                <h2>
-                    <th:block th:text="${article.title}"></th:block>
-                </h2>
+                <figure>
 
-            </header>
+                    <img src="images/blog-images/blog-details-image.jpg" alt="" class="img-responsive" />
 
+                </figure>
 
-            <figure>
+                <div id="post-content" class="post-content" itemprop="articleBody">
+                    <th:block th:utext="${commons.article(article.content)}"></th:block>
+                </div>
 
-                <img src="images/blog-images/blog-details-image.jpg" alt="" class="img-responsive"/>
+            </article>
 
-            </figure>
+            <!-- Comments -->
+            <div th:replace="site/comments::comments"></div>
 
-            <div id="post-content" class="post-content" itemprop="articleBody">
-                <th:block th:utext="${commons.article(article.content)}"></th:block>
-            </div>
+        </div>
 
+    </main>
 
-        </article>
+    <!-- main -->
 
+    <!-- footer -->
 
-        <!-- Comments -->
-        <div th:replace="site/comments::comments"></div>
-
-
-    </div>
-
-
-</main>
-
-<!-- main -->
-
-<!-- footer -->
-
-<div th:replace="site/footer::footer(${commons.site_title()},${commons.site_record()},${commons.site_url()})"></div>
+    <div th:replace="site/footer::footer(${commons.site_title()},${commons.site_record()},${commons.site_url()})"></div>
 
 </body>
 <div th:replace="comm/tale_comment::tale_comment"></div>
+
 </html>

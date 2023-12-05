@@ -61,9 +61,10 @@ public class HomeController extends BaseController{
     @ApiIgnore
     @GetMapping(value = {"/about", "/about/index"})
     public String getAbout(HttpServletRequest request){
-        this.blogBaseData(request, null);//获取友链
-        request.setAttribute("active","about");
-        return "site/about";
+        // this.blogBaseData(request, null);//获取友链
+        // request.setAttribute("active","about");
+        // return "site/about";
+        return this.blogIndex(request, 1, 11);
     }
 
 

@@ -4,8 +4,8 @@
 
     <!-- logo -->
 
-    <h1> <a th:href="@{/}" title="avana LLC"><img th:src="@{https://cdn.jsdelivr.net/gh/WinterChenS/imgrpo/blog/20210816112027.png}" style="width: 66px;" title="Luis" alt="Luis"/></a> </h1>
-
+    <h1> <a th:href="@{/}" title="avana LLC"><img th:src="@{https://www.z4a.net/images/2023/12/05/-2.png}"
+                style="width: 66px;" title="Duster" alt="Duster" /></a> </h1>
 
     <!-- logo -->
 
@@ -13,9 +13,9 @@
 
     <nav role="footer-nav">
         <ul>
-            <li><a th:href="@{/}" title="Work">Work</a></li>
-            <li><a th:href="@{/about}" title="About">About</a></li>
-            <li><a th:href="@{/blog/index}" title="Blog">Blog</a></li>
+            <li><a th:href="@{/}" title="Life">Life</a></li>
+            <!-- <li><a th:href="@{/about}" title="About">About</a></li>
+            <li><a th:href="@{/blog/index}" title="Blog">Blog</a></li> -->
         </ul>
     </nav>
 
@@ -50,8 +50,10 @@
             </th:block>
         </th:block>
     </ul>
-    <p class="copy-right">&copy; 2018 <th:block th:text="${title}"></th:block></p>
-    <th:block th:if="${record != null and record != ''}"><a class="copy-right" th:href="@{http://www.miitbeian.gov.cn/}" th:text="${record}"></a></th:block>
+    <p class="copy-right">&copy; 2018 <th:block th:text="${title}"></th:block>
+    </p>
+    <th:block th:if="${record != null and record != ''}"><a class="copy-right" th:href="@{http://www.miitbeian.gov.cn/}"
+            th:text="${record}"></a></th:block>
 </footer>
 
 <!-- footer -->
@@ -68,10 +70,10 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 
 <script th:src="@{/site/js/bootstrap.min.js}" type="text/javascript"></script>
-<script th:src="@{/site/js/effects/masonry.pkgd.min.js}"  type="text/javascript"></script>
-<script th:src="@{/site/js/effects/imagesloaded.js}"  type="text/javascript"></script>
-<script th:src="@{/site/js/effects/classie.js}"  type="text/javascript"></script>
-<script th:src="@{/site/js/effects/AnimOnScroll.js}"  type="text/javascript"></script>
+<script th:src="@{/site/js/effects/masonry.pkgd.min.js}" type="text/javascript"></script>
+<script th:src="@{/site/js/effects/imagesloaded.js}" type="text/javascript"></script>
+<script th:src="@{/site/js/effects/classie.js}" type="text/javascript"></script>
+<script th:src="@{/site/js/effects/AnimOnScroll.js}" type="text/javascript"></script>
 <script th:src="@{/site/js/effects/modernizr.custom.js}"></script>
 <script th:src="@{https://cdn.bootcss.com/headroom/0.9.1/headroom.min.js}"></script>
 <script th:src="@{https://cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js}"></script>
@@ -82,7 +84,7 @@
 <script th:src="@{/site/js/html5shiv.js}" type="text/javascript"></script>
 <script data-no-instant="">
     /*<![CDATA[*/
-    InstantClick.on('change', function (isInitialLoad) {
+    InstantClick.on('change', function(isInitialLoad) {
         var blocks = document.querySelectorAll('pre code');
         for (var i = 0; i < blocks.length; i++) {
             hljs.highlightBlock(blocks[i]);
@@ -96,13 +98,12 @@
 </script>
 <!-- 百度收录自动推送 -->
 <script>
-    (function(){
+    (function() {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
         if (curProtocol === 'https') {
             bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
+        } else {
             bp.src = 'http://push.zhanzhang.baidu.com/push.js';
         }
         var s = document.getElementsByTagName("script")[0];
@@ -110,7 +111,8 @@
     })();
 
     function linkFirend(link) {
-        window.location.href=link;
+        window.location.href = link;
     }
 </script>
+
 </html>

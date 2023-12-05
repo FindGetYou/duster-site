@@ -1,117 +1,99 @@
 <!DOCTYPE HTML>
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div th:replace="site/head::head(${commons.site_title()},${commons.google_site_verification()}, ${commons.baidu_site_verification()})"></div>
-
-
-
+<div
+    th:replace="site/head::head(${commons.site_title()},${commons.google_site_verification()}, ${commons.baidu_site_verification()})">
+</div>
 
 <body>
 
-    
+    <!-- header -->
 
-    	<!-- header -->
+    <div th:replace="site/header::header"></div>
 
-        <div th:replace="site/header::header"></div>
+    <!-- header -->
 
+    <!-- main -->
 
-        <!-- header -->
+    <main role="main-inner-wrapper" class="container">
 
-        <!-- main -->
+        <div class="row">
 
-        <main role="main-inner-wrapper" class="container">
+            <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
 
-        	
+                <article role="pge-title-content">
 
-            <div class="row">
+                    <header>
 
-            
+                        <h2><span>Hi! </span> My name is Duster.</h2>
 
-            	<section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+                    </header>
 
-                	<article role="pge-title-content">
+                    <p>I’m a Developer with an enduring interest in Coding and Write Blog</p>
 
-                    	<header>
+                </article>
 
-                        	<h2><span>Hi! </span> My name is Winter.</h2>
+            </section>
 
-                        </header>
+            <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
-                        <p>I’m a Java Developer with an enduring interest in Coding and Write Blog</p>
+                <article class="about-content">
 
-                    </article>
+                    <p>In my free time I enjoy coding, cycling, photography and meeting new people.</p>
 
-                </section>
+                    <p>Want to work together on something? Just Email me . And scan the QR code to add me on WeChat.</p>
 
-                
+                </article>
 
-                <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            </section>
 
-                	<article class="about-content">
+            <div class="clearfix"></div>
 
-                    	<p>In my free time I enjoy coding, cycling, photography and meeting new people.</p>
+            <!-- thumbnails -->
 
-                        <p>Want to work together on something? Just Email me . And scan the QR code to add me on WeChat.</p>
+            <div class="thumbnails-pan">
+                <th:block th:each="link,linkStat : ${links}">
+                    <th:block th:if="${linkStat.index < 3}">
+                        <section class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
 
-                    </article>
+                            <figure>
 
-                </section>
+                                <img th:src="@{'/site/images/about-images/about-image-' + ${linkStat.index+1} + '.jpg'}"
+                                    th:onclick="'javascript:linkFirend(\''+${link.slug}+'\')'" class="img-responsive" />
 
-                
+                                <figcaption>
 
-                <div class="clearfix"></div>
+                                    <h3>
+                                        <th:block th:text="${link.name}"></th:block>
+                                    </h3>
 
-                
+                                    <h5>
+                                        <th:block th:text="${link.description}"></th:block>
+                                    </h5>
 
-                <!-- thumbnails -->
+                                </figcaption>
 
-                	<div class="thumbnails-pan">
-                        <th:block th:each="link,linkStat : ${links}">
-                            <th:block th:if="${linkStat.index < 3}">
-                                <section class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
+                            </figure>
 
-                                    <figure>
+                        </section>
+                    </th:block>
 
-                                        <img th:src="@{'/site/images/about-images/about-image-' + ${linkStat.index+1} + '.jpg'}" th:onclick="'javascript:linkFirend(\''+${link.slug}+'\')'" class="img-responsive"/>
-
-                                        <figcaption>
-
-                                            <h3><th:block th:text="${link.name}"></th:block></h3>
-
-                                            <h5><th:block th:text="${link.description}"></th:block></h5>
-
-                                        </figcaption>
-
-                                    </figure>
-
-                                </section>
-                            </th:block>
-
-                        </th:block>
-
-
-
-                        
-
-                     
-
-                    </div>
-
-                <!-- thumbnails -->
-
-                
-
-                
+                </th:block>
 
             </div>
 
-        </main>
+            <!-- thumbnails -->
 
-    	<!-- main -->
+        </div>
 
-        <!-- footer -->
+    </main>
 
-        <div th:replace="site/footer::footer(${commons.site_title()},${commons.site_record()},${commons.site_url()})"></div>
+    <!-- main -->
+
+    <!-- footer -->
+
+    <div th:replace="site/footer::footer(${commons.site_title()},${commons.site_record()},${commons.site_url()})"></div>
 
 </body>
+
 </html>
